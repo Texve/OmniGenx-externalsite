@@ -3,26 +3,51 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url('https://www.dafz.ae/en/corporate/why-dafz/');
+        /* Replace the URL above with your image's actual URL */
+        color: white;
+        min-height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Makes text pop against the background */
+      }
+
+      #lightningout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 60px); /* Adjust to leave room for the header */
+      }
+    </style>
   </head>
-    <body>
-        <h1>DAFZ</h1>
-        <div id="lightningout"></div>
-        <script src="https://texvellc--texvedemo.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
-        <script>
-            $Lightning.use(
-                'c:LightningOutDependencyApp', // name of the Lightning Out app
-                function () { // callback after the framework and app load
-                    $Lightning.createComponent(
-                        'c:websiteChat', // top-level component of the Lightning Out app
-                        {}, // attributes to set on the component
-                        'lightningout', // DOM element ID where the component is inserted
-                        function (cmp) { // callback after the component loads
-                            console.log('The component was created.');
-                        }
-                    );
-                },
-                '	https://texvellc--texvedemo.sandbox.my.site.com' // Experience Cloud site endpoint
-            );
-        </script>
-    </body>
+  <body>
+    <h1>DAFZ</h1>
+    <div id="lightningout"></div>
+    <script src="https://texvellc--texvedemo.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+    <script>
+      $Lightning.use(
+        'c:LightningOutDependencyApp', // name of the Lightning Out app
+        function () { // callback after the framework and app load
+          $Lightning.createComponent(
+            'c:websiteChat', // top-level component of the Lightning Out app
+            {}, // attributes to set on the component
+            'lightningout', // DOM element ID where the component is inserted
+            function (cmp) { // callback after the component loads
+              console.log('The component was created.');
+            }
+          );
+        },
+        'https://texvellc--texvedemo.sandbox.my.site.com' // Experience Cloud site endpoint
+      );
+    </script>
+  </body>
 </html>
+
